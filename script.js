@@ -1,4 +1,4 @@
-import {products} from 'C:/Users/Dell/Documents/products.js';
+import {products} from 'https://github.com/Ashirvaad1/Shop/blob/197ea0e82f0941f736fe8afc9c0d271c995d9a2e/products.js';
 let imageRotationIntervals = {};
 function displayProducts() {
     const productsSection = document.getElementById('products');
