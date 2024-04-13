@@ -1,7 +1,3 @@
-fetch('https://raw.githubusercontent.com/Ashirvaad1/Shop/197ea0e82f0941f736fe8afc9c0d271c995d9a2e/products.js')
-  .then(response => response.text())
-  .then(script => {
-    eval(script);
 	  let imageRotationIntervals = {};
 function displayProducts() {
     const productsSection = document.getElementById('products');
@@ -200,8 +196,9 @@ function openOrderDialog() {
     document.body.appendChild(orderDialog);
     orderDialog.showModal();
 }
+const script = document.createElement('script');
+script.src = 'https://raw.githubusercontent.com/Ashirvaad1/Shop/197ea0e82f0941f736fe8afc9c0d271c995d9a2e/products.js';
+script.onload = () => {
     displayProducts();
-  })
-  .catch(error => {
-    console.error('Error fetching products:', error);
-  });
+};
+document.body.appendChild(script);
