@@ -1,0 +1,8 @@
+const products = [
+    { id: 1, name: 'Apples', price: 248.17, images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK8dAngK0UAIlu7OG1d8ykoOS1J0tmA878U39XAXqhatT1bAW3QADxYpml7tF_2cLtZGo&usqp=CAU', 'https://th.bing.com/th/id/OIP.kc29cFsS5Yh1Q5yUWeAWjQHaHa?w=160&h=180&c=7&r=0&o=5&pid=1.7'], categories: ['fruits'], addedToCart: false, intervalId: null },
+    { id: 2, name: 'Bananas', price: 165.17, images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Cavendish_Banana_DS.jpg/220px-Cavendish_Banana_DS.jpg', 'https://th.bing.com/th/id/OIP.uoSsIReWF6-87jynEsdZIgHaHa?w=169&h=180&c=7&r=0&o=5&pid=1.7'], categories: ['fruits'], addedToCart: false, intervalId: null },
+    { id: 3, name: 'Milk', price: 289.67, images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe7yYcq0aeJTah03y2hce573Y0p9qltHup9g&usqp=CAU', 'https://th.bing.com/th/id/OIP.PNYATY98_KSYp6kGNMo62gHaHa?w=172&h=180&c=7&r=0&o=5&pid=1.7'], categories: ['dairy'], addedToCart: false, intervalId: null },
+    { id: 4, name: 'Bread', price: 206.67, images: ['https://www.bigbasket.com/media/uploads/p/l/40037465_1-fresho-white-big-bread-slices-safe-preservative-free.jpg', 'https://th.bing.com/th/id/OIP.oCGfdttRamtu9d--AT0VCQHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7'], categories: ['grocery'], addedToCart: false, intervalId: null },
+    { id: 5, name: 'Eggs', price: 248.17, images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqJZjcNc4YdSJi74WV165yjwgZ9Wxf9wiCtA&usqp=CAU', 'https://th.bing.com/th/id/OIP.gSObUvQllHvOBmXKaXo_9wHaFo?w=250&h=190&c=7&r=0&o=5&pid=1.7'], categories: ['dairy'], addedToCart: false, intervalId: null }
+];
+export {products};
