@@ -196,9 +196,3 @@ function openOrderDialog() {
     document.body.appendChild(orderDialog);
     orderDialog.showModal();
 }
-const script = document.createElement('script');
-script.src = 'https://raw.githubusercontent.com/Ashirvaad1/Shop/197ea0e82f0941f736fe8afc9c0d271c995d9a2e/products.js';
-script.onload = () => {
-    displayProducts();
-};
-document.body.appendChild(script);
