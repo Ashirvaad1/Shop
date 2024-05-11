@@ -4,21 +4,15 @@ import base64
 app=Flask(__name__)
 repo_owner=Ashirvaad1
 repo_name=Shop
-file_path= 'path/to/your/file.txt'
-github_api_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
-
-# Personal access token for GitHub API authentication
-access_token = 'your_personal_access_token'
-
-# Function to authenticate with GitHub API
+file_path=Notices.txt
+github_api_url=f'https://api.github.com/repos/ashirvaad1/Shop/contents/{file_path}'
+access_token=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
 def authenticate():
     headers = {
         'Authorization': f'token {access_token}'
     }
     return headers
-
-# Function to get file contents from GitHub repository
-def get_file_contents():
+    def get_file_contents():
     headers = authenticate()
     response = requests.get(github_api_url, headers=headers)
     if response.status_code == 200:
@@ -27,8 +21,6 @@ def get_file_contents():
         return decoded_content
     else:
         return None
-
-# Function to update file contents in GitHub repository
 def update_file_contents(new_content):
     headers = authenticate()
     current_content = get_file_contents()
@@ -43,8 +35,6 @@ def update_file_contents(new_content):
         return response.status_code
     else:
         return None
-
-# Route to handle GET request to retrieve file contents
 @app.route('/get-file', methods=['GET'])
 def get_file():
     file_content = get_file_contents()
@@ -52,8 +42,6 @@ def get_file():
         return jsonify({'content': file_content}), 200
     else:
         return jsonify({'error': 'Failed to retrieve file contents'}), 500
-
-# Route to handle POST request to update file contents
 @app.route('/update-file', methods=['POST'])
 def update_file():
     data = request.get_json()
