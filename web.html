@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Text File</title>
+</head>
+<body>
+    <h1>Update Text File</h1>
+    <form id="updateForm">
+        <label for="textContent">Enter Text:</label><br>
+        <textarea id="textContent" name="textContent" rows="4" cols="50"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var textContent = document.getElementById('textContent').value;
+            fetch('/update-file', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: textContent })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Text file updated successfully!');
+                } else {
+                    alert('Failed to update text file.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while updating the text file.');
+            });
+        });
+    </script>
+</body>
+</html>
