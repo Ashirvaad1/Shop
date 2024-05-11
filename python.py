@@ -2,9 +2,9 @@ from flask import Flask, request, jsonify
 import requests
 import base64
 app=Flask(__name__)
-repo_owner='your_username'
-repo_name = 'your_repository_name'
-file_path = 'path/to/your/file.txt'
+repo_owner=Ashirvaad1
+repo_name=Shop
+file_path= 'path/to/your/file.txt'
 github_api_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
 
 # Personal access token for GitHub API authentication
