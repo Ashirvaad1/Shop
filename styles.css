@@ -50,8 +50,9 @@ nav button:hover
 {
 	background-color: black;
 }
-main {
-    padding: 20px;
+main
+{
+	margin: 25px;
 }
 .tab
 {
@@ -70,12 +71,12 @@ footer {
     justify-content: center;
 }
 .product-item {
-    margin: 50px;
+    margin: 15px;
     text-align: center;
 }
 .product-image {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
 }
 .product-name {
     margin-top: auto;
