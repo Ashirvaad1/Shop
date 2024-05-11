@@ -5,14 +5,14 @@ app=Flask(__name__)
 repo_owner=Ashirvaad1
 repo_name=Shop
 file_path=Notices.txt
-github_api_url=f'https://api.github.com/repos/ashirvaad1/Shop/contents/{file_path}'
+github_api_url=f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
 access_token=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
 def authenticate():
     headers = {
         'Authorization': f'token {access_token}'
     }
     return headers
-    def get_file_contents():
+def get_file_contents():
     headers = authenticate()
     response = requests.get(github_api_url, headers=headers)
     if response.status_code == 200:
