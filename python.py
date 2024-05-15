@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 repo_owner = 'Ashirvaad1'
 repo_name = 'Shop'
-file_path = 'Notices.txt'
+file_path = '/Notices.txt'
 github_api_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
 access_token = os.getenv('GITHUB_ACCESS_TOKEN')
 def authenticate():
