@@ -1,13 +1,12 @@
 from flask import Flask, request, jsonify
 import requests
 import base64
-import os
 app = Flask(__name__)
 repo_owner = 'Ashirvaad1'
 repo_name = 'Shop'
-file_path = '/Notices.txt'
+file_path = 'Notices.txt'
 github_api_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
-access_token = os.getenv('GITHUB_ACCESS_TOKEN')
+access_token = 'your_personal_access_token'
 def authenticate():
     headers = {
         'Authorization': f'token {access_token}'
