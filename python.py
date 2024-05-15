@@ -6,7 +6,7 @@ repo_owner = 'Ashirvaad1'
 repo_name = 'Shop'
 file_path = 'Notices.txt'
 github_api_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
-access_token = 'your_personal_access_token'
+access_token = 'ghp_MUGYgoOGBV81TK0UBHpWGrgvRlkm1j3zQP0t'
 def authenticate():
     headers = {
         'Authorization': f'token {access_token}'
