@@ -2,25 +2,17 @@ from flask import Flask, request, jsonify
 import requests
 import base64
 import os
-
 app = Flask(__name__)
-
-# GitHub repository details
 repo_owner = 'Ashirvaad1'
 repo_name = 'Shop'
 file_path = 'Notices.txt'
 github_api_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
-
-# Personal access token for GitHub API authentication
-# Use an environment variable for security
 access_token = os.getenv('GITHUB_ACCESS_TOKEN')
-
 def authenticate():
     headers = {
         'Authorization': f'token {access_token}'
     }
     return headers
-
 def get_file_contents():
     headers = authenticate()
     response = requests.get(github_api_url, headers=headers)
@@ -32,7 +24,6 @@ def get_file_contents():
     else:
         print(f"Error fetching file: {response.status_code}, {response.json()}")
         return None, None
-
 def update_file_contents(new_content, sha):
     headers = authenticate()
     encoded_content = base64.b64encode(new_content.encode('utf-8')).decode('utf-8')
@@ -43,7 +34,6 @@ def update_file_contents(new_content, sha):
     }
     response = requests.put(github_api_url, json=data, headers=headers)
     return response
-
 @app.route('/get-file', methods=['GET'])
 def get_file():
     file_content, sha = get_file_contents()
@@ -51,7 +41,6 @@ def get_file():
         return jsonify({'content': file_content}), 200
     else:
         return jsonify({'error': 'Failed to retrieve file contents'}), 500
-
 @app.route('/update-file', methods=['POST'])
 def update_file():
     data = request.get_json()
